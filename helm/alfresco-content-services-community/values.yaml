@@ -265,19 +265,14 @@ share:
 
 # Defines the mounting points for the persistence required by the apps in the
 # cluster the alf_data folder from alfresco-content-repository app is mapped to
-# alfresco-content-services-community/repository-data
+# alfresco-content-services/repository-data
 persistence:
   existingClaim: "alfresco-volume-claim"
   repository:
     enabled: true
     data:
       mountPath: "/usr/local/tomcat/alf_data"
-      subPath: "alfresco-content-services-community/repository-data"
-  filestore:
-    enabled: true
-    data:
-      mountPath: "/tmp/Alfresco"
-      subPath: "alfresco-content-services-community/filestore-data"
+      subPath: "alfresco-content-services/repository-data"
 
 # Settings that define that alfresco-content-services (this helm chart) is dependent of alfresco-infrastructure chart
 # alfresco-infrastructure is defined here: https://github.com/Alfresco/alfresco-infrastructure-deployment/tree/master/charts/incubator/alfresco-infrastructure
@@ -338,7 +333,7 @@ postgresql:
     log_min_messages: LOG
   persistence:
     existingClaim: "alfresco-volume-claim"
-    subPath: "alfresco-content-services-community/database-data"
+    subPath: "alfresco-content-services/database-data"
   resources:
     requests:
       memory: "1500Mi"
